@@ -1,0 +1,3 @@
+module HelloWorldHexRuby
+    VERSION = '0.0.1'
+end
