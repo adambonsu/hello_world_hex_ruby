@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# Installs all dependencies specified in the Gemfile
+
 require 'bundler/setup'
 
 # Require any dependencies from your Gemfile
