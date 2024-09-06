@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+
+# Require any dependencies from your Gemfile
+Bundler.require
+
+puts 'All dependencies have been successfully installed.'
