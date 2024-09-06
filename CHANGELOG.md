@@ -12,9 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Core functionality:
   - `HelloWorldCore` class to handle the main logic
   - `UserInterfacePort` interface for defining User Interface methods
-- Adapters:
-  - `ConsoleUserInterfaceAdapter` for printing to the console
-  - `FileUserInterfaceAdapter` for writing to a file
+- Adaptors:
+  - `ConsoleUserInterfaceAdaptor` for printing to the console
+  - `FileUserInterfaceAdaptor` for writing to a file
 - Basic project structure suitable for a Ruby gem
 - README with usage instructions and explanation of Hexagonal Architecture
 - This CHANGELOG file to track project changes

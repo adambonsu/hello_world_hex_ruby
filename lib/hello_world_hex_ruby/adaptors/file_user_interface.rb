@@ -1,6 +1,6 @@
 module HelloWorldHexRuby
   module Adaptors
-    class FileUserInterface < UserInterface
+    class FileUserInterface < ::HelloWorldHexRuby::Ports::UserInterface
         def initialize(file_path)
             @file_path = file_path
         end

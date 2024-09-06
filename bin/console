@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'hello_world_hex_ruby'
+
+# Start an interactive Ruby session
+require 'irb'
+IRB.start

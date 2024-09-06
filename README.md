@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/hello_world_hex.svg)](https://badge.fury.io/rb/hello_world_hex_ruby)
 [![Build Status](https://travis-ci.org/yourusername/hello_world_hex_ruby.svg?branch=main)](https://travis-ci.org/adambonsu/hello_world_hex_ruby)
 
-Hello World Hex Ruby is a simple Ruby gem that demonstrates the principles of Hexagonal Architecture (also known as Ports and Adapters) using a "Hello World" example.
+Hello World Hex Ruby is a simple Ruby gem that demonstrates the principles of Hexagonal Architecture (also known as Ports and Adaptors) using a "Hello World" example.
 
 ## Table of Contents
 
@@ -41,18 +41,18 @@ Here's an example of how to use the gem:
 ```ruby
 require 'hello_world_hex_ruby'
 
-# Create an adapter
-console_adapter = HelloWorldHexRuby::Adapters::ConsoleOutputAdapter.new
+# Create an adaptor
+console_adaptor = HelloWorldHexRuby::Adaptors::ConsoleUserInterface.new
 
-# Create the core application with the adapter
-core = HelloWorldHexRuby::Core::HelloWorldCore.new(console_adapter)
+# Create the core application with the adaptor
+core = HelloWorldHexRuby::Core::HelloWorldCore.new(console_adaptor)
 
 # Use the core application
 core.say_hello("World")  # Outputs: Hello, World!
 
-# Use a different adapter
-file_adapter = HelloWorldHexRuby::Adapters::FileOutputAdapter.new('output.txt')
-core_with_file = HelloWorldHexRuby::Core::HelloWorldCore.new(file_adapter)
+# Use a different adaptor
+file_adaptor = HelloWorldHexRuby::Adaptors::FileUserInterface.new('output.txt')
+core_with_file = HelloWorldHexRuby::Core::HelloWorldCore.new(file_adaptor)
 core_with_file.say_hello("Ruby")  # Writes "Hello, Ruby!" to output.txt
 
 ```
