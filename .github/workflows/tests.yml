@@ -25,3 +25,15 @@ jobs:
               with:
                   name: coverage
                   path: coverage/
+            - name: Dependency Check
+              uses: dependency-check/Dependency-Check_Action@main
+              with:
+                  project: 'hello_world_hex_ruby'
+                  path: '.'
+                  format: 'HTML'
+                  out: 'dependency-check'
+            - name: Upload Dependency Check Report
+              uses: actions/upload-artifact@v3
+              with:
+                  name: dependency-check
+                  path: ${{github.workspace}}/dependency-check
