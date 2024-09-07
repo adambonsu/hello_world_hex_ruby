@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'simplecov-cobertura'
+require 'simplecov'
 
-SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
 SimpleCov.start
