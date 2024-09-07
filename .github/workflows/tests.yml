@@ -20,3 +20,8 @@ jobs:
               run: bundle exec rake dev:lint
             - name: Unit tests
               run: bundle exec rake spec
+            - name: Upload Coverage Report
+              uses: actions/upload-artifact@v3
+              with:
+                  name: coverage
+                  path: coverage/
