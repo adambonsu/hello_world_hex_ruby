@@ -29,8 +29,7 @@ $ bundle install
 
 ```
 
-Or install it yourself as:
-Add this gem source:
+Or install it yourself with:
 ```
 gem sources --add https://USERNAME:TOKEN@rubygems.pkg.github.com/adambonsu/
 
