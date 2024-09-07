@@ -1,2 +1,4 @@
 .env
 activity.log
+coverage/
+spec/examples.txt

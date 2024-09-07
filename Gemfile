@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rake', '~> 13.0'
-gem 'rspec', '~> 3.0'
-gem 'rubocop', '~> 1.7'
-gem 'simplecov', '~> 0.17.1'
+gem 'rake', '~> 13.0', group: :development
+gem 'rspec', '~> 3.0', group: :development
+gem 'rubocop', '~> 1.7', group: :development
+gem 'simplecov', '~> 0.22', '>= 0.22.0', group: :development
+gem 'simplecov-cobertura', '~> 2.1', '>= 2.1.0', group: :development
