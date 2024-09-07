@@ -3,7 +3,7 @@
 require_relative 'lib/hello_world_hex_ruby/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'hello_world'
+  spec.name = 'hello_world_hex_ruby'
   spec.version       = HelloWorldHexRuby::VERSION
   spec.authors       = ['Adam Bonsu']
   spec.email         = ['adam@bonsu.io']
