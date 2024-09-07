@@ -37,7 +37,6 @@ $ gem install hello_world_hex_ruby
 ```
 * `USERNAME` with your GitHub username.
 * `TOKEN` with your personal access token (classic).
-* `NAMESPACE` with the name of the personal account or organization to which the gem is scoped.
 
 
 ## Usage
