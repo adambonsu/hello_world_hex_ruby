@@ -10,16 +10,21 @@ concurrency:
     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
     cancel-in-progress: true
 jobs:
-    run-tests:
+    run-functional-tests:
         permissions:
             contents: read
-        uses: ./.github/workflows/tests.yml
+        uses: ./.github/workflows/functional-tests.yml
+        secrets: inherit
+    run-security-tests:
+        permissions:
+            contents: read
+        uses: ./.github/workflows/security-tests.yml
         secrets: inherit
     upload-gem:
         permissions:
             packages: write
             contents: read
-        needs: [run-tests]
+        needs: [run-functional-tests, run-security-tests]
         if: ${{ always() }}
         uses: ./.github/workflows/upload-gem.yml
         secrets: inherit
