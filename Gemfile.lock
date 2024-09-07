@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hello_world (0.0.1)
+    hello_world_hex_ruby (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -57,7 +57,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  hello_world!
+  hello_world_hex_ruby!
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.7)
