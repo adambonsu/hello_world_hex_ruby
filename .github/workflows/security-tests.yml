@@ -36,6 +36,14 @@ jobs:
               uses: snyk/actions/setup@master
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            - name: Debug Environment variables
+              run: env | sort
+            - name: Check Snyk Version
+              run: snyk --version
+            - name: Run Snyk test with logging
+              run: snyk test --all-projects --sarif-file-output=snyk.sarif --debug
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Run Snyk test
               run: snyk test --all-projects --sarif-file-output=snyk.sarif
               env:
