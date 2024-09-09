@@ -32,3 +32,14 @@ jobs:
               with:
                   name: dependency-check
                   path: ${{github.workspace}}/dependency-check
+            - name: Run Snyk to check for vulnerabilities
+              uses: snyk/actions/ruby@master
+              continue-on-error: true # To make sure that SARIF upload gets called even if Snyk fails
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              with:
+                args: --sarif-file-output=snyk.sarif
+            - name: Upload Snyk Report to GitHub Code Scanning
+              uses: github/codeql-action/upload-sarif@v2
+              with:
+                sarif_file: snyk.sarif
