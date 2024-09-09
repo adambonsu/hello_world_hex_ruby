@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    test-and-build:
+    security-tests:
         runs-on: ubuntu-latest
         permissions:
             contents: read
@@ -32,9 +32,13 @@ jobs:
               with:
                   name: dependency-check
                   path: ${{github.workspace}}/dependency-check
+            - name: Authenticate Snyk
+              run: "snyk auth $SNYK_TOKEN"
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Run Snyk to check for vulnerabilities
               uses: snyk/actions/ruby@master
-              continue-on-error: true # To make sure that SARIF upload gets called even if Snyk fails
+              continue-on-error: true # Ensure SARIF upload gets called even if Snyk fails
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
               with:
