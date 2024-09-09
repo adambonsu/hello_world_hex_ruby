@@ -14,12 +14,10 @@ jobs:
         permissions:
             contents: read
         uses: ./.github/workflows/functional-tests.yml
-        secrets: inherit
     run-security-tests:
         permissions:
             contents: read
         uses: ./.github/workflows/security-tests.yml
-        secrets: inherit
     upload-gem:
         permissions:
             packages: write
@@ -27,4 +25,3 @@ jobs:
         needs: [run-functional-tests, run-security-tests]
         if: ${{ always() }}
         uses: ./.github/workflows/upload-gem.yml
-        secrets: inherit
