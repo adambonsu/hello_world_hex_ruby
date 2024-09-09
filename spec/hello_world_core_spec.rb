@@ -8,8 +8,8 @@ module HelloWorldHexRuby
       it 'says hello' do
         user_interface = double
         core = HelloWorldCore.new(user_interface)
-        expect(user_interface).to receive(:display).with('Hello, Ruby!')
-        core.say_hello('Ruby')
+        expect(user_interface).to receive(:display).with('Hello, Hexagonal Ruby!')
+        core.say_hello('Hexagonal Ruby')
       end
     end
   end
