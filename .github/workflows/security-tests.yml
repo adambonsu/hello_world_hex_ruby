@@ -20,6 +20,8 @@ jobs:
                   bundler-cache: true
             - name: SAST(Talisman) - Detect secrets in commits
               uses: carhartl/talisman-secrets-scan-action@v1.4.0
+            - name: DEBUG - list contents
+              run: ls -lR
             - name: Upload SAST(Talisman) Report
               uses: actions/upload-artifact@v4
               with:
