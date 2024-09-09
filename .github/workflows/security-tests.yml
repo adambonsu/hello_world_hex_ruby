@@ -32,6 +32,7 @@ jobs:
               with:
                   name: dependency-check
                   path: ${{github.workspace}}/dependency-check
+            - uses: snyk/actions/setup@master
             - name: Authenticate Snyk
               run: "snyk auth $SNYK_TOKEN"
               env:
