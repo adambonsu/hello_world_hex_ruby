@@ -33,6 +33,9 @@ jobs:
                   name: dependency-check
                   path: ${{github.workspace}}/dependency-check
             - uses: snyk/actions/setup@master
+            - run: snyk auth ${{ secrets.SNYK_TOKEN }}
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Snyk monitor
               run: snyk monitor
               continue-on-error: true # Ensure SARIF upload gets called even if Snyk fails
