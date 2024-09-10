@@ -37,9 +37,9 @@ jobs:
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Token is set
-              run: "[[ -z \"${SNYK_TOKEN}\" ]] && echo \"SNYK_TOKEN is not set\" || echo \"SNYK_TOKEN is set\""
               env:
-                SNYK_TOKEN: "${{ secrets.TESTINGONETWOTHREE }}"
+                SNYK_TOKEN: "${{ secrets.SNYK_TOKEN }}"
+              run: "[[ -z \"${SNYK_TOKEN}\" ]] && echo \"SNYK_TOKEN is not set\" || echo \"SNYK_TOKEN is set\""
             - name: Check Snyk Version
               run: snyk --version
             - name: Run Snyk test with logging
