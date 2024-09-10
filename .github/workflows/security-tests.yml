@@ -36,14 +36,10 @@ jobs:
               uses: snyk/actions/setup@master
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            - name: Debug Environment variables
-              run: env | sort
-              env:
-                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Token is set
               run: "[[ -z \"${SNYK_TOKEN}\" ]] && echo \"SNYK_TOKEN is not set\" || echo \"SNYK_TOKEN is set\""
               env:
-                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+                SNYK_TOKEN: "YAGGA"
             - name: Check Snyk Version
               run: snyk --version
             - name: Run Snyk test with logging
