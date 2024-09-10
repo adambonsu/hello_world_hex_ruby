@@ -40,6 +40,10 @@ jobs:
               run: env | sort
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            - name: Check Snyk Token is set
+              run: echo [[ -z "${SNYK_TOKEN}" ]]
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Version
               run: snyk --version
             - name: Run Snyk test with logging
