@@ -16,7 +16,8 @@ jobs:
         uses: ./.github/workflows/functional-tests.yml
     run-security-tests:
         permissions:
-            contents: read
+          security-events: write
+          contents: read
         uses: ./.github/workflows/security-tests.yml
     upload-gem:
         permissions:
