@@ -49,7 +49,7 @@ jobs:
                 else
                   echo "SNYK_TOKEN is set: ${SNYK_TOKEN}"
                 fi
-                export SNYK_TOKEN=$SNYK_TOKEN && snyk test --all-projects --sarif-file-output=snyk.sarif --org=$SNYK_ORGANIZATION_ID --debug
+                snyk test --all-projects --sarif-file-output=snyk.sarif --org=$SNYK_ORGANIZATION_ID --debug
             - name: Run Snyk test
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
