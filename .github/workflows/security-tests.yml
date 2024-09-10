@@ -8,6 +8,8 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             contents: read
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         steps:
             - name: Checkout
               uses: actions/checkout@v4
