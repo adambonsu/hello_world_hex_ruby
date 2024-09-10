@@ -8,6 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             contents: read
+            actions: read
+            statuses: read
+            security-events: write
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         steps:
