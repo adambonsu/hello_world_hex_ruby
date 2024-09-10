@@ -40,7 +40,7 @@ jobs:
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
               run: |
-                if [ -z "$SNYK_TOKEN" ]; then
+                if [ -z "%SNYK_TOKEN%" ]; then
                   echo "SNYK_TOKEN is not set"
                   exit 1
                 else
