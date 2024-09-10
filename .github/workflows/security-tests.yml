@@ -38,6 +38,8 @@ jobs:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Debug Environment variables
               run: env | sort
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Version
               run: snyk --version
             - name: Run Snyk test with logging
