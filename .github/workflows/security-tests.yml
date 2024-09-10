@@ -9,8 +9,6 @@ jobs:
         permissions:
             contents: read
             actions: read
-            statuses: read
-            security-events: write
         steps:
             - name: Checkout
               uses: actions/checkout@v4
