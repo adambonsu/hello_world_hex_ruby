@@ -39,7 +39,13 @@ jobs:
             - name: Check Snyk Token is set
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-              run: "[[ -z \"${SNYK_TOKEN}\" ]] && echo \"SNYK_TOKEN is not set\" || echo \"SNYK_TOKEN is set\""
+              run: |
+                if [ -z "$SNYK_TOKEN" ]; then
+                  echo "SNYK_TOKEN is not set"
+                  exit 1
+                else
+                  echo "SNYK_TOKEN is set"
+                fi
             - name: Check Snyk Version
               run: snyk --version
             - name: Run Snyk test with logging
