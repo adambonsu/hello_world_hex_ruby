@@ -38,7 +38,7 @@ jobs:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Version
               run: snyk --version
-            - name: Run Snyk test with logging
+            - name: Run Snyk test with logging 0
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
                 SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
@@ -46,6 +46,17 @@ jobs:
               continue-on-error: true # To make sure that SARIF upload gets called even if the test fails
               with:
                 args: --all-projects --sarif-file-output=snyk.sarif --org=$SNYK_ORGANIZATION_ID --debug
+            - name: Run Snyk test with logging 1
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              run: |
+                if [ -z "%SNYK_TOKEN%" ]; then
+                  echo "SNYK_TOKEN is not set"
+                  exit 1
+                else
+                  echo "SNYK_TOKEN is set: ${SNYK_TOKEN}"
+                fi
+                export SNYK_TOKEN=$SNYK_TOKEN && snyk test --all-projects --sarif-file-output=snyk.sarif --debug
             - name: Run Snyk test
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
