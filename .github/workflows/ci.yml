@@ -17,6 +17,7 @@ jobs:
     run-security-tests:
         permissions:
           security-events: write
+          actions: read
           contents: read
         uses: ./.github/workflows/security-tests.yml
     upload-gem:
