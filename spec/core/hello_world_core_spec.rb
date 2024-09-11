@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../lib/hello_world_hex_ruby/core/hello_world_core'
+require_relative '../../lib/hello_world_hex_ruby/core/hello_world_core'
 
 module HelloWorldHexRuby
   module Core
