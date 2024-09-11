@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2024-09-11
+### Added
+- Adaptors:
+  - `StringUserInterface` A new adapter that captures the output as a string. This is useful for testing and scenarios where you need to work with the output programmatically.
+
 ## [0.0.1] - 2024-09-06
 ### Added
 - Initial release of the Hello World Hexagonal Architecture gem
@@ -35,5 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - N/A
 
-[Unreleased]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/adambonsu/hello_world_hex_ruby/releases/tag/v0.0.1
