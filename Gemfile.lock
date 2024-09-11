@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hello_world_hex_ruby (0.0.1)
+    hello_world_hex_ruby (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -49,7 +49,7 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.12.3)
+    simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
     unicode-display_width (2.5.0)
 
