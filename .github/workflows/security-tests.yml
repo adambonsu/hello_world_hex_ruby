@@ -16,16 +16,16 @@ jobs:
               with:
                   ruby-version: 3.0
                   bundler-cache: true
-            - name: SAST(Talisman) - Detect secrets in commits
+            - name: Static Application Security Test (SAST) - Talisman - Detect secrets in commits
               uses: carhartl/talisman-secrets-scan-action@v1.4.0
-            - name: Dependency Check
+            - name: Security Composition Analysis (SCA) - OWASP Dependency Check
               uses: dependency-check/Dependency-Check_Action@main
               with:
                   project: 'hello_world_hex_ruby'
                   path: '.'
                   format: 'HTML'
                   out: 'dependency-check'
-            - name: Upload Dependency Check Report
+            - name: Upload OWASP Dependency Check Report
               uses: actions/upload-artifact@v4
               with:
                   name: dependency-check
