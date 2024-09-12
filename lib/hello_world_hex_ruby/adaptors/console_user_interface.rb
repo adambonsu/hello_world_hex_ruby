@@ -4,10 +4,11 @@ require_relative '../ports/user_interface'
 module HelloWorldHexRuby
   module Adaptors
     class ConsoleUserInterface < ::HelloWorldHexRuby::Ports::UserInterface
-      def initialize(output = STDOUT)
+      def initialize(output = $stdout)
         super()
         @output = output
       end
+
       def display(message)
         @output.puts message
       end
