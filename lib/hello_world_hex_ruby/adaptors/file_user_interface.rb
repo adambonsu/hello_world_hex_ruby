@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
+require_relative '../ports/user_interface'
 module HelloWorldHexRuby
   module Adaptors
     class FileUserInterface < ::HelloWorldHexRuby::Ports::UserInterface
-      def initialize(file_path)
-        super
-        @file_path = file_path
+      def initialize(file_object)
+        super()
+        @file_object = file_object
       end
 
       def display(message)
-        File.open(@file_path, 'a') { |file| file.puts message }
+        @file_object.write(message)
       end
     end
   end

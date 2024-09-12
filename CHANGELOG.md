@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2024-09-12
+### Added
+- Spec:
+  - `file_user_interface_spec.rb` A new spec test for `FileUserInterface` Adaptor.
+  - `user_interface_spec.rb` A new spec test for `UserInterface` Port.
+
+### Changed
+- Adaptors:
+  - `file_user_interface.rb` Accepts a Stream instead of a filename - different files/outputs can be used - makes it more flexible and easier to test (using StringIO).
+- Spec:
+  - `string_user_interface_spec.rb` Refactored to use a `message` variable - makes test more DRY.
+
 ## [0.0.3] - 2024-09-11
 ### Added
 - Spec:

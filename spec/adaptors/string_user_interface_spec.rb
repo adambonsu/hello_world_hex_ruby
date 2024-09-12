@@ -7,7 +7,8 @@ module HelloWorldHexRuby
     RSpec.describe StringUserInterface do
       it 'displays a message' do
         user_interface = StringUserInterface.new
-        expect(user_interface.display('Hello, Hexagonal Ruby!')).to eq('Hello, Hexagonal Ruby!')
+        message = 'Hello, Hexagonal Ruby!'
+        expect(user_interface.display(message)).to eq(message)
       end
     end
   end
