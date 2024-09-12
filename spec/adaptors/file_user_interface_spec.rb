@@ -10,11 +10,10 @@ module HelloWorldHexRuby
         output_file = StringIO.new
         user_interface = FileUserInterface.new(output_file)
         message = 'Hello, Hexagonal Ruby!'
-        
+
         user_interface.display(message)
         expect(output_file.string).to eq(message)
       end
     end
   end
 end
-
