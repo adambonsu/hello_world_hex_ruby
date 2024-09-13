@@ -21,5 +21,4 @@ jobs:
             packages: write
             contents: read
         needs: [run-functional-tests, run-security-tests]
-        if: ${{ always() }}
         uses: ./.github/workflows/upload-gem.yml
