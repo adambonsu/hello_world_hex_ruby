@@ -11,6 +11,7 @@ module HelloWorldHexRuby
 
       def display(message)
         @file_object.write(message)
+        @file_object.flush
       end
     end
   end

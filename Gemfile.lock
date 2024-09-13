@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hello_world_hex_ruby (0.0.6)
+    hello_world_hex_ruby (0.0.7)
 
 GEM
   remote: https://rubygems.org/
@@ -19,6 +19,7 @@ GEM
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.9.2)
+    require_all (3.0.0)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -60,6 +61,7 @@ PLATFORMS
 DEPENDENCIES
   hello_world_hex_ruby!
   rake (~> 13.0)
+  require_all (~> 3.0)
   rspec (~> 3.0)
   rubocop (~> 1.7)
   simplecov (~> 0.22, >= 0.22.0)

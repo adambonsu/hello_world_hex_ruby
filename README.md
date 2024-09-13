@@ -42,8 +42,6 @@ $ gem install hello_world_hex_ruby
 ## Usage
 Here's an example of how to use the gem:
 ```ruby
-require 'hello_world_hex_ruby'
-
 # Create an adaptor
 console_adaptor = HelloWorldHexRuby::Adaptors::ConsoleUserInterface.new
 
@@ -54,7 +52,7 @@ core = HelloWorldHexRuby::Core::HelloWorldCore.new(console_adaptor)
 core.say_hello("World")  # Outputs: Hello, World!
 
 # Use a different adaptor
-file_adaptor = HelloWorldHexRuby::Adaptors::FileUserInterface.new('output.txt')
+file_adaptor = HelloWorldHexRuby::Adaptors::FileUserInterface.new(File.open('output.txt', 'w'))
 core_with_file = HelloWorldHexRuby::Core::HelloWorldCore.new(file_adaptor)
 core_with_file.say_hello("Ruby")  # Writes "Hello, Ruby!" to output.txt
 

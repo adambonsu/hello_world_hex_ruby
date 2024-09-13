@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 2024-09-13
+
+### Changed
+- Core functionality:
+  - `lib/hello_world_hex_ruby.rb` Using `require_all` gem, makes adding new core/ports/adaptors less error-prone since they're included by default.
+- Adaptors:
+  - `file_user_interface.rb` Flushes stream after each `#display()` - file is now updated in realtime.
+- README with updated example using FileUserInterface Adaptor
+
+
+
 ## [0.0.6] - 2024-09-12
 
 ### Changed
@@ -73,7 +84,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - N/A
 
-[Unreleased]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.6...HEAD
+[Unreleased]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.3...v0.0.4
