@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'This gem demonstrates Hexagonal Architecture with a simple ruby Hello World application.'
   spec.homepage      = 'https://github.com/adambonsu/hello_world_hex_ruby'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 3.3.5')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.3.0')
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/adambonsu/hello_world_hex_ruby'
   spec.metadata['changelog_uri'] = 'https://github.com/adambonsu/hello_world_hex_ruby/blob/main/CHANGELOG.md'

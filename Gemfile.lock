@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hello_world_hex_ruby (0.0.9)
+    hello_world_hex_ruby (0.0.10)
 
 GEM
   remote: https://rubygems.org/
