@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8] - 2024-09-20
+### Changed
+- Remove references to require_all gem:
+  - `Gemfile` and `Gemfile.lock` Removed reference to `require_all` gem; causing issues in downstream rails application using hello_world_hex_ruby gem.
+  - `lib/hello_world_hex_ruby.rb` Specifying explicit paths to lib files
+- README:
+  - `README.md` Fix typo - backslashes replaced with forward slashes when referring to directory paths
+
 ## [0.0.7] - 2024-09-13
 
 ### Changed
@@ -84,7 +92,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - N/A
 
-[Unreleased]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.8...HEAD
+[0.0.8]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/adambonsu/hello_world_hex_ruby/compare/v0.0.4...v0.0.5
