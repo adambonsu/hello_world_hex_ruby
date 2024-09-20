@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.11] - 2024-09-20
+### Changed
+- Replace explicit path with relative path:
+  - `lib/hello_world_hex_ruby.rb` Specifying relative paths to lib files
+
 ## [0.0.10] - 2024-09-20
 ### Changed
 - Bump minimum ruby version down to 3.3.0:
