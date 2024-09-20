@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hello_world_hex_ruby (0.0.10)
+    hello_world_hex_ruby (0.0.11)
 
 GEM
   remote: https://rubygems.org/
@@ -51,11 +51,11 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
-    unicode-display_width (2.5.0)
+    unicode-display_width (2.6.0)
 
 PLATFORMS
+  arm64-darwin-23
   ruby
-  x86_64-darwin-20
 
 DEPENDENCIES
   hello_world_hex_ruby!
@@ -65,4 +65,4 @@ DEPENDENCIES
   simplecov (~> 0.22, >= 0.22.0)
 
 BUNDLED WITH
-   2.5.18
+   2.5.19
