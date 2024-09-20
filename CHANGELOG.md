@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.10] - 2024-09-20
 ### Changed
-- Bump minimum ruby version to 3.3.0:
+- Bump minimum ruby version down to 3.3.0:
   - `hello_world_hex_ruby.gemspec` Downstream app is using ruby `3.3.0`, so bumped down from `3.3.5` to `3.3.0`
 
 ## [0.0.9] - 2024-09-20
