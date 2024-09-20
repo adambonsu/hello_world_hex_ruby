@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.9] - 2024-09-20
+### Changed
+- Bump minimum ruby version to 3.3.5:
+  - `hello_world_hex_ruby.gemspec` Downstream app is using ruby `3.3.5`, so bumped from `2.7.0` to `3.3.5`
+
+
 ## [0.0.8] - 2024-09-20
 ### Changed
 - Remove references to require_all gem:
