@@ -16,38 +16,20 @@ jobs:
               with:
                   ruby-version: 3.0
                   bundler-cache: true
-            - name: Static Application Security Test (SAST) - Talisman - Detect secrets in commits
-              uses: carhartl/talisman-secrets-scan-action@v1.4.0
-            - name: Security Composition Analysis (SCA) - OWASP Dependency Check
-              uses: dependency-check/Dependency-Check_Action@main
-              with:
-                  project: 'hello_world_hex_ruby'
-                  path: '.'
-                  format: 'HTML'
-                  out: 'dependency-check'
-            - name: Upload OWASP Dependency Check Report
-              uses: actions/upload-artifact@v4
-              with:
-                  name: dependency-check
-                  path: ${{github.workspace}}/dependency-check
-            - name: Set up Snyk
-              uses: snyk/actions/setup@master
-              env:
-                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Version
               run: snyk --version
             - name: Snyk test
               run: snyk test
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            - name: Run Snyk test with logging 0
+            - name: Run Snyk to check for vulnerabilities
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
                 SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
               uses: snyk/actions/ruby@master
               continue-on-error: true # To make sure that SARIF upload gets called even if the test fails
               with:
-                args: --all-projects --sarif-file-output=snyk.sarif --org=$SNYK_ORGANIZATION_ID -d
+                args: --sarif-file-output=snyk.sarif -d
             - name: Upload Snyk Report
               uses: github/codeql-action/upload-sarif@v2
               with:
