@@ -33,7 +33,7 @@ jobs:
             - name: snyk auth with debug
               if: always()
               run: |
-                    snyk auth --auth-type=token --debug
+                    snyk auth --auth-type=token ${{ secrets.SNYK_TOKEN }} --debug
               env:
                   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
                   SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
