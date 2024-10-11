@@ -34,17 +34,3 @@ jobs:
               uses: github/codeql-action/upload-sarif@v2
               with:
                   sarif_file: snyk.sarif
-            - name: snyk auth with debug
-              if: always()
-              env:
-                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-                  SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
-              run: |
-                    snyk auth --debug
-            - name: snyk code test with debug
-              if: always()
-              env:
-                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-                SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
-              run: |
-                snyk code test --all-projects --sarif-file-output=snyk.sarif --debug
