@@ -42,6 +42,7 @@ jobs:
               if: always()
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+                SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
               run: |
                 if [ -z "%SNYK_TOKEN%" ]; then
                   echo "SNYK_TOKEN is not set"
@@ -49,4 +50,4 @@ jobs:
                 else
                   echo "SNYK_TOKEN is set: ${SNYK_TOKEN}"
                 fi
-                export SNYK_TOKEN=$SNYK_TOKEN && snyk test --all-projects --sarif-file-output=snyk.sarif --debug
+                snyk code test --all-projects --sarif-file-output=snyk.sarif --debug
