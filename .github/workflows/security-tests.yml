@@ -30,3 +30,25 @@ jobs:
               with:
                   name: dependency-check
                   path: ${{github.workspace}}/dependency-check
+            - name: Set up Snyk
+              uses: snyk/actions/setup@master
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            - name: Check Snyk Version
+              run: snyk --version
+            - name: Snyk test
+              run: snyk test
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            - name: Run Snyk test with logging 0
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+                SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
+              uses: snyk/actions/ruby@master
+              continue-on-error: true # To make sure that SARIF upload gets called even if the test fails
+              with:
+                args: --all-projects --sarif-file-output=snyk.sarif --org=$SNYK_ORGANIZATION_ID -d
+            - name: Upload Snyk Report
+              uses: github/codeql-action/upload-sarif@v2
+              with:
+                  sarif_file: snyk.sarif
