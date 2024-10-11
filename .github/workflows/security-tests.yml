@@ -16,6 +16,10 @@ jobs:
               with:
                   ruby-version: 3.0
                   bundler-cache: true
+            - name: Set up Snyk
+              uses: snyk/actions/setup@master
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Version
               run: snyk --version
             - name: Snyk test
