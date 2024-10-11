@@ -38,3 +38,15 @@ jobs:
               uses: github/codeql-action/upload-sarif@v2
               with:
                   sarif_file: snyk.sarif
+            - name: Run Snyk test with logging
+              if: always()
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              run: |
+                if [ -z "%SNYK_TOKEN%" ]; then
+                  echo "SNYK_TOKEN is not set"
+                  exit 1
+                else
+                  echo "SNYK_TOKEN is set: ${SNYK_TOKEN}"
+                fi
+                export SNYK_TOKEN=$SNYK_TOKEN && snyk test --all-projects --sarif-file-output=snyk.sarif --debug
