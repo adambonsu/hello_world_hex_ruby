@@ -22,12 +22,21 @@ jobs:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             - name: Check Snyk Version
               run: snyk --version
+            - name: use auth github action with debug
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+                SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
+              uses: snyk/actions/node@master
+              with:
+                command: auth
+                args: --auth-type=token -d
             - name: snyk auth with debug
+              if: always()
+              run: |
+                    snyk auth --auth-type=token --debug
               env:
                   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
                   SNYK_ORGANIZATION_ID: ${{ secrets.SNYK_ORGANIZATION_ID }}
-              run: |
-                    snyk auth --auth-type=token --debug
             - name: use snyk github action with debug
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
