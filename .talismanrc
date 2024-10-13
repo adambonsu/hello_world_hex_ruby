@@ -1,4 +1,4 @@
 fileignoreconfig:
   - filename: .github/workflows/security-tests.yml
-    checksum: 8e796f04b3d363c8d8fbce47ced70126dbcd8c868610243dbb0fc9e9b22420ad
+    checksum: 0aa83dd711e67a05acb987479088e45cecbb9eb49bc7182ce34bbebd6bf01451
     version: ""
