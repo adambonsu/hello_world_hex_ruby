@@ -1,7 +1,6 @@
 # Hello World Hex Ruby
 
-[![Gem Version](https://badge.fury.io/rb/hello_world_hex.svg)](https://badge.fury.io/rb/hello_world_hex_ruby)
-[![Build Status](https://travis-ci.org/yourusername/hello_world_hex_ruby.svg?branch=main)](https://travis-ci.org/adambonsu/hello_world_hex_ruby)
+[![Build Status](https://github.com/adambonsu/hello_world_hex_ruby/actions/workflows/ci.yml/badge.svg)](https://github.com/adambonsu/hello_world_hex_ruby/actions/workflows/ci.yml)
 
 Hello World Hex Ruby is a simple Ruby gem that demonstrates the principles of Hexagonal Architecture (also known as Ports and Adaptors) using a "Hello World" example.
 
